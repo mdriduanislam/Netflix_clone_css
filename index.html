@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -106,4 +106,149 @@
         </div>
     </div>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Netflix Bangladesh — Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index.js">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="topbar container">
+      <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
+      <div class="top-actions">
+        <select class="lang" aria-label="Select language">
+          <option>English</option>
+          <option>বাংলা</option>
+        </select>
+        <button class="signin">Sign In</button>
+      </div>
+    </div>
+
+    <div class="hero-inner container">
+      <h1>Unlimited movies, TV shows, and more</h1>
+      <h2>Watch anywhere. Cancel anytime.</h2>
+      <p class="lead">Ready to watch? Enter your email to create or restart your membership.</p>
+
+      <form class="cta" onsubmit="return false;">
+        <input type="email" placeholder="Email address" required />
+        <button class="cta-btn">Get Started &gt;</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- curved separator (SVG) -->
+  <div class="curve">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden>
+      <path d="M0 0 C 360 120 1080 120 1440 0 L1440 80 L0 80 Z" fill="#000"/>
+      <!-- subtle pink glow -->
+      <defs>
+        <radialGradient id="g" cx="50%" cy="20%">
+          <stop offset="0%" stop-color="#e50914" stop-opacity="0.9"/>
+          <stop offset="55%" stop-color="#e50914" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path d="M0 0 C 360 120 1080 120 1440 0 L1440 80 L0 80 Z" fill="url(#g)" style="filter: blur(36px); opacity:0.6"/>
+    </svg>
+  </div>
+
+  <!-- Trending carousel -->
+  <section class="trending container">
+    <h3>Trending Now</h3>
+    <div class="carousel" id="carousel" tabindex="0" aria-roledescription="carousel">
+      <!-- posters: replace or add items as needed -->
+      <div class="card"><img src="https://image.tmdb.org/t/p/w500/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg" alt="Poster"></div>
+      <div class="card"><img src="https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Poster"></div>
+      <div class="card"><img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="Poster"></div>
+      <div class="card"><img src="https://image.tmdb.org/t/p/w500/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="Poster"></div>
+      <div class="card"><img src="https://image.tmdb.org/t/p/w500/1Rr5SrvHxMXHu5RjKpaMba8VTzi.jpg" alt="Poster"></div>
+    </div>
+  </section>
+
+  <!-- Feature sections (TV / Mobile / Downloads) -->
+  <section class="feature container">
+    <div class="feature-text">
+      <h3>Enjoy on your TV</h3>
+      <p>Watch on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+    </div>
+    <div class="feature-media">
+      <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV">
+      <video class="feature-video" autoplay muted loop playsinline>
+        <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4" />
+      </video>
+    </div>
+  </section>
+
+  <section class="feature reverse container">
+    <div class="feature-text">
+      <h3>Download your shows to watch offline</h3>
+      <p>Save your favorites easily and always have something to watch.</p>
+    </div>
+    <div class="feature-media">
+      <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile">
+    </div>
+  </section>
+
+  <!-- More Reasons grid -->
+  <section class="reasons container">
+    <h3>More Reasons to Join</h3>
+    <div class="grid">
+      <div class="reason">
+        <h4>Watch everywhere</h4>
+        <p>Stream on your phone, tablet, laptop and TV without paying more.</p>
+      </div>
+      <div class="reason">
+        <h4>Create profiles for kids</h4>
+        <p>Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq container">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-list" id="faq">
+      <button class="faq-item"><span>What is Netflix?</span><i class="plus">+</i></button>
+      <button class="faq-item"><span>How much does Netflix cost?</span><i class="plus">+</i></button>
+      <button class="faq-item"><span>Where can I watch?</span><i class="plus">+</i></button>
+      <button class="faq-item"><span>How do I cancel?</span><i class="plus">+</i></button>
+      <button class="faq-item"><span>What can I watch on Netflix?</span><i class="plus">+</i></button>
+    </div>
+
+    <p class="lead">Ready to watch? Enter your email to create or restart your membership.</p>
+    <form class="cta" onsubmit="return false;">
+      <input type="email" placeholder="Email address" required />
+      <button class="cta-btn">Get Started &gt;</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Questions? Call 000-800-919-1694</p>
+      <div class="footer-grid">
+        <a href="#">FAQ</a>
+        <a href="#">Help Center</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookie Preferences</a>
+        <a href="#">Corporate Information</a>
+      </div>
+      <p class="country">Netflix Bangladesh</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
+

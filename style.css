@@ -1,17 +1,17 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-}
-.main{
+} */
+/* .main{
     height: 100vh;
-    background-color: black;
+    background-color: black; */
     /* background-image: url('assets/bg-main.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center ; */
-}
-.container{
+/* } */
+/* .container{
     width: 100%;
     height: 100%;
     display: flex;
@@ -112,7 +112,6 @@
 }
 
 .movie{
-    /* margin-top: -5px; */
     padding-top: 30px;
     width: 100%;
     background-color: rgb(0, 0, 2);
@@ -122,8 +121,6 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
-    /* border-top-left-radius: 200% 1%;
-    border-top-right-radius: 200% 1%; */
     border-top: 5px solid transparent;
     border-image: radial-gradient(circle at center, #460a2b 0%, #a83863 30%, transparent 70%) 1 round;
 }
@@ -236,4 +233,99 @@
     font-size: 24px;
     font-weight: normal;
     cursor: pointer;
+} */
+ /* Reset */
+/* Reset + base */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#e50914; --bg:#000; --muted:#999; --card:#141414;
+  --container:1200px;
 }
+body{background:var(--bg);color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.4}
+.container{width:92%;max-width:var(--container);margin:0 auto}
+
+/* HERO - exact hero artwork similar to netflix page */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,.65), rgba(0,0,0,.2)),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/68f0f6ad-4495-4d59-8ad1-efed62b7a4f0/7a79e702-9d18-4de5-8f8b-dc4b09e4a9cf/BD-en-20241014-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+}
+
+/* top bar */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0;z-index:3}
+.logo{height:36px}
+.top-actions{display:flex;gap:12px;align-items:center}
+.lang{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.12);padding:6px;border-radius:4px}
+.signin{background:var(--red);border:none;padding:8px 14px;border-radius:4px;color:#fff;cursor:pointer}
+
+/* hero inner */
+.hero-inner{padding:6rem 0 4rem;text-align:center;z-index:2}
+.hero-inner h1{font-size:clamp(1.6rem,3.5vw,3.2rem);font-weight:700;margin-bottom:12px}
+.hero-inner h2{font-weight:400;margin-bottom:18px;font-size:1.1rem;color:#e6e6e6}
+.lead{color:#ddd;margin-bottom:20px}
+
+/* CTA */
+.cta{display:flex;gap:10px;justify-content:center;align-items:center}
+.cta input{padding:14px 16px;border-radius:4px;border:none;min-width:320px;max-width:540px}
+.cta .cta-btn{background:var(--red);color:#fff;padding:12px 20px;border:none;border-radius:4px;cursor:pointer;font-weight:600}
+
+/* curve: SVG inserted already */
+
+/* Trending carousel */
+.trending{padding:40px 0}
+.trending h3{font-size:1.4rem;margin-bottom:16px}
+.carousel{display:flex;gap:14px;overflow:auto;padding-bottom:8px;scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch}
+.card{flex:0 0 auto;width:160px;scroll-snap-align:start;border-radius:6px;overflow:hidden;background:#111;transition:transform .25s}
+.card img{width:100%;height:240px;object-fit:cover;display:block}
+.card:focus, .card:hover{transform:scale(1.06)}
+
+/* Features */
+.feature{display:flex;gap:30px;align-items:center;padding:56px 0;border-top:8px solid #111}
+.feature.reverse{flex-direction:row-reverse}
+.feature-text{flex:1;min-width:280px}
+.feature-text h3{font-size:1.8rem;margin-bottom:12px}
+.feature-text p{color:#ddd}
+.feature-media{flex:1;position:relative}
+.feature-media img{width:100%;max-width:520px;display:block;margin:0 auto}
+.feature-video{position:absolute;left:12%;top:18%;width:76%;height:auto;border-radius:6px;pointer-events:none}
+
+/* reasons */
+.reasons{padding:48px 0}
+.reasons h3{font-size:1.6rem;text-align:center;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.reason{background:#0d0d0d;padding:18px;border-radius:8px}
+.reason h4{margin-bottom:8px}
+
+/* FAQ */
+.faq{padding:48px 0;border-top:8px solid #111}
+.faq h3{text-align:center;margin-bottom:18px}
+.faq-list{max-width:880px;margin:0 auto;display:grid;gap:10px}
+.faq-item{background:#1f1f1f;padding:18px 20px;border-radius:6px;text-align:left;display:flex;justify-content:space-between;align-items:center;cursor:pointer;border:1px solid rgba(255,255,255,0.03)}
+.faq-item .plus{font-weight:700;color:#fff}
+
+/* cta duplicates spacing */
+.cta{margin-top:18px}
+
+/* Footer */
+.footer{color:var(--muted);padding:36px 0;border-top:8px solid #111}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:18px 0}
+.footer a{color:var(--muted);text-decoration:none;font-size:0.95rem}
+.country{text-align:left;margin-top:8px;color:var(--muted)}
+
+/* small screens */
+@media (max-width:800px){
+  .feature{flex-direction:column}
+  .feature-video{position:static;width:70%;margin:10px auto 0}
+  .cta input{min-width:160px}
+  .card img{height:220px}
+  .hero-inner{padding-top:4rem}
+}
+
